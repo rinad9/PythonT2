@@ -1,0 +1,29 @@
+<!--its like inheriting the base.html file 
+    of making a tail compleation for it by this ile-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Products</h1>
+    <div class="row">
+        {% for product in products %}
+            <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.name }}</h5>
+                  <p class="card-text">${{ product.price }}</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
+    <ul>
+        <!--template tag in django --> 
+        <!--to dynamically excute logic -->
+        <!--(for loop) to repeate some code-->
+        <!--(if) to dynamically render content-->
+        <!--we can write dynamic code in it-->
+        <!--like loops and if-->
+        
+{% endblock %}
